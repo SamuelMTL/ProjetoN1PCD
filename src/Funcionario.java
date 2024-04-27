@@ -7,22 +7,6 @@ public class Funcionario extends Thread {
         this.contaSalario = contaSalario;
         this.contaInvestimentos = contaInvestimentos;
     }
-
-    // public void run() {
-
-    //     while (true) {
-    //         if (contaSalario.getSaldo() >= salario) {
-    //             investir();
-    //             break; 
-    //         }
-    //         try {
-    //             Thread.sleep(500);  
-    //         } catch (InterruptedException e) {
-    //             e.printStackTrace();
-    //         }
-    //     }
-    // }
-
     
     public void investir() {
         double valorInvestimento = SALARIO * 0.2;
