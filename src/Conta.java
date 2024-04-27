@@ -37,4 +37,14 @@ public class Conta {
     public double getSaldo() {
         return saldo;
     }
+
+    public void transferir(Conta destino, double valor) {
+        lock.lock();
+        try {
+            sacar(valor);
+            destino.depositar(valor);
+        } finally {
+            lock.unlock();
+        }
+    }
 }
