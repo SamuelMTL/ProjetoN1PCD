@@ -3,7 +3,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Conta {
     private double saldo;  
-    private Lock lock = new ReentrantLock();  
+    private final Lock lock = new ReentrantLock();  
 
 
     public Conta(double saldoInicial) {
