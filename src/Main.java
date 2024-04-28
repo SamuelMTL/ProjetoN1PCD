@@ -31,7 +31,7 @@ public class Main {
         // Criar contas para clientes
         Cliente[] clientes = new Cliente[5];
         for (int i = 0; i < clientes.length; i++) {
-            Conta contaCliente = new Conta(1000);  // Cada cliente começa com R$ 1000,00
+            Conta contaCliente = new Conta(1000);  
             clientes[i] = new Cliente(contaCliente, new Loja[]{loja1, loja2}, bancoCentral);
         }
 
@@ -51,7 +51,9 @@ public class Main {
             try {
                 cliente.join();
             } catch (InterruptedException e) {
-                System.out.println("Cliente interrompido.");
+                System.err.println("Execução interrompida: " + e.getMessage());
+                // Propagação opcional da interrupção para manter o estado consistente
+                Thread.currentThread().interrupt();
             }
         }
 

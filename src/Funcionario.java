@@ -8,11 +8,12 @@ public class Funcionario extends Thread {
         this.contaInvestimentos = contaInvestimentos;
     }
     
-    public void investir() {
+    public void receberPagamento() {
         double valorInvestimento = SALARIO * 0.2;
         contaSalario.transferir(contaInvestimentos, valorInvestimento);
         System.out.println(Thread.currentThread().getName() + " investiu R$" + valorInvestimento + " na conta de investimentos.");
     }
+
 
     public Conta getContaSalario() {
         return contaSalario;
